@@ -232,6 +232,47 @@ function initScrollEffects() {
   document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
   });
+
+  // Portfolio bag spiral animation
+  const bagContainer = document.querySelector('.bag-container');
+  if (bagContainer) {
+    const portfolioItems = bagContainer.querySelectorAll('.portfolio-item');
+
+    const bagObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Animate each portfolio item with staggered delay
+          portfolioItems.forEach((item) => {
+            item.classList.add('animate-in');
+          });
+          bagObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.3,
+      rootMargin: '0px 0px -100px 0px'
+    });
+
+    bagObserver.observe(bagContainer);
+  }
+
+  // General scroll animations
+  const scrollAnimateElements = document.querySelectorAll('.scroll-animate');
+  const scrollObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+        scrollObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  scrollAnimateElements.forEach(el => {
+    scrollObserver.observe(el);
+  });
 }
 
 /* ===================================

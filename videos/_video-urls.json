@@ -1,0 +1,133 @@
+{
+  "videoData": [
+    {
+      "index": 0,
+      "sources": [
+        "https://video.wixstatic.com/video/d684e2_52e5655503604eff8d783311966dc93a/480p/mp4/file.mp4"
+      ],
+      "poster": null,
+      "description": "Beauty and Selfcare"
+    },
+    {
+      "index": 1,
+      "sources": [
+        "https://video.wixstatic.com/video/d684e2_4afbd13ae568405f9666a5d849113c87/480p/mp4/file.mp4"
+      ],
+      "poster": null,
+      "description": "Beauty and Selfcare"
+    },
+    {
+      "index": 2,
+      "sources": [
+        "https://video.wixstatic.com/video/d684e2_a69bbf8c42ce446cb01b77912db387b1/480p/mp4/file.mp4"
+      ],
+      "poster": null,
+      "description": "Travel"
+    },
+    {
+      "index": 3,
+      "sources": [
+        "https://video.wixstatic.com/video/d684e2_b9a62fd693aa4935b026005ad2e28625/480p/mp4/file.mp4"
+      ],
+      "poster": null,
+      "description": "Travel"
+    },
+    {
+      "index": 4,
+      "sources": [
+        "https://video.wixstatic.com/video/d684e2_efef2c4712a44b3cba3b8e9e10c88c29/480p/mp4/file.mp4"
+      ],
+      "poster": null,
+      "description": "Travel"
+    },
+    {
+      "index": 5,
+      "sources": [
+        "https://video.wixstatic.com/video/d684e2_cda88986014049c098ca85dedbad47eb/480p/mp4/file.mp4"
+      ],
+      "poster": null,
+      "description": "Travel"
+    },
+    {
+      "index": 6,
+      "sources": [
+        "https://video.wixstatic.com/video/d684e2_97ae4d78ffb746ac959d8f9259ed55ce/480p/mp4/file.mp4"
+      ],
+      "poster": null,
+      "description": "Fashion"
+    },
+    {
+      "index": 7,
+      "sources": [
+        "https://video.wixstatic.com/video/d684e2_d4cb49cbac1742ef84e94b1d4edbd5d1/480p/mp4/file.mp4"
+      ],
+      "poster": null,
+      "description": "Fashion"
+    },
+    {
+      "index": 8,
+      "sources": [
+        "https://video.wixstatic.com/video/d684e2_0dd941b46d854384a901f73a55d8a98f/480p/mp4/file.mp4"
+      ],
+      "poster": null,
+      "description": "Fashion"
+    },
+    {
+      "index": 9,
+      "sources": [
+        "https://video.wixstatic.com/video/d684e2_b7bd11b3c417404bafe59e7c7d377d30/480p/mp4/file.mp4"
+      ],
+      "poster": null,
+      "description": "Fashion"
+    },
+    {
+      "index": 10,
+      "sources": [
+        "https://video.wixstatic.com/video/d684e2_5e9dda612f814788a7b2b2b20fcd42f5/480p/mp4/file.mp4"
+      ],
+      "poster": null,
+      "description": "Lifestyle and Experiences"
+    },
+    {
+      "index": 11,
+      "sources": [
+        "https://video.wixstatic.com/video/d684e2_0db97ae4620848e49b538fece9047ff8/480p/mp4/file.mp4"
+      ],
+      "poster": null,
+      "description": "Lifestyle and Experiences"
+    },
+    {
+      "index": 12,
+      "sources": [
+        "https://video.wixstatic.com/video/d684e2_4da9fd5dead5466780a5253c8778c78a/480p/mp4/file.mp4"
+      ],
+      "poster": null,
+      "description": "Lifestyle and Experiences"
+    },
+    {
+      "index": 13,
+      "sources": [
+        "https://video.wixstatic.com/video/d684e2_408ebde375014ca5a82a03b10f2b44bd/480p/mp4/file.mp4"
+      ],
+      "poster": null,
+      "description": "Lifestyle and Experiences"
+    }
+  ],
+  "allVideoUrls": [
+    "https://video.wixstatic.com/video/d684e2_52e5655503604eff8d783311966dc93a/480p/mp4/file.mp4",
+    "https://video.wixstatic.com/video/d684e2_4afbd13ae568405f9666a5d849113c87/480p/mp4/file.mp4",
+    "https://static.parastorage.com/services/editor-elements-library/dist/thunderbolt/rb_wixui.thunderbolt[MediaPlayer_videoBox].97901e15.bundle.min.js",
+    "https://video.wixstatic.com/video/d684e2_a69bbf8c42ce446cb01b77912db387b1/480p/mp4/file.mp4",
+    "https://video.wixstatic.com/video/d684e2_b9a62fd693aa4935b026005ad2e28625/480p/mp4/file.mp4",
+    "https://video.wixstatic.com/video/d684e2_efef2c4712a44b3cba3b8e9e10c88c29/480p/mp4/file.mp4",
+    "https://video.wixstatic.com/video/d684e2_cda88986014049c098ca85dedbad47eb/480p/mp4/file.mp4",
+    "https://video.wixstatic.com/video/d684e2_97ae4d78ffb746ac959d8f9259ed55ce/480p/mp4/file.mp4",
+    "https://video.wixstatic.com/video/d684e2_0dd941b46d854384a901f73a55d8a98f/480p/mp4/file.mp4",
+    "https://video.wixstatic.com/video/d684e2_b7bd11b3c417404bafe59e7c7d377d30/480p/mp4/file.mp4",
+    "https://video.wixstatic.com/video/d684e2_0db97ae4620848e49b538fece9047ff8/480p/mp4/file.mp4",
+    "https://video.wixstatic.com/video/d684e2_4da9fd5dead5466780a5253c8778c78a/480p/mp4/file.mp4",
+    "https://video.wixstatic.com/video/d684e2_408ebde375014ca5a82a03b10f2b44bd/480p/mp4/file.mp4",
+    "https://video.wixstatic.com/video/d684e2_d4cb49cbac1742ef84e94b1d4edbd5d1/480p/mp4/file.mp4",
+    "https://video.wixstatic.com/video/d684e2_5e9dda612f814788a7b2b2b20fcd42f5/480p/mp4/file.mp4"
+  ]
+}
