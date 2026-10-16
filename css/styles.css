@@ -1891,3 +1891,57 @@ section {
   .dj-testimonial-photo { width: 100%; max-width: 260px; height: auto; aspect-ratio: 5 / 7; }
   video, iframe { max-width: 100%; }
 }
+
+/* === Mobile header redesign: name + hamburger bar, full-screen menu === */
+@media (max-width: 768px) {
+  .header {
+    align-items: center;
+    padding: 0.55rem 0.5rem 0.55rem 1.1rem;
+    background-color: var(--color-primary);
+  }
+  .logo { max-width: none; position: relative; z-index: 1002; }
+  .logo-title { font-family: var(--font-heading); font-size: 1rem; line-height: 1.2; margin: 0; }
+  .logo-subtitle { display: none; }
+  .header .menu-toggle {
+    display: flex !important;
+    position: relative;
+    z-index: 1002;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 0;
+  }
+  .header .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: auto; height: 100vh; height: 100dvh;
+    padding: 0;
+    z-index: 1001;
+    background-color: var(--color-primary);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+  .header .nav.active { opacity: 1; visibility: visible; }
+  .header .nav a {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+    min-height: 56px;
+    min-width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header .nav a::after { display: none; }
+  .hero { padding-top: 96px; }
+}
