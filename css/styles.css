@@ -1564,3 +1564,18 @@ section {
   display: block;
 }
 @media (max-width: 900px) { .masonry-gallery { columns: 2; } }
+
+/* Case study media variants */
+.case-media-tall img { height: 371px; }
+.ugc-tall img { height: 453px; }
+.case-video-item video {
+  width: 332px;
+  height: 184px;
+  object-fit: cover;
+}
+.case-video-item p {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+.project-details { text-align: center; }
+.project-detail-item p { font-size: 0.85rem; opacity: 0.9; }
