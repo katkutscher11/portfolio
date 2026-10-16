@@ -59,107 +59,80 @@ function initTestimonialSlider() {
   if (!slider) return;
 
   const slides = slider.querySelectorAll('.testimonial-slide');
-  const dots = slider.querySelectorAll('.testimonial-dot');
-  const prevBtn = slider.querySelector('.testimonial-nav.prev');
-  const nextBtn = slider.querySelector('.testimonial-nav.next');
+  const dots = document.querySelectorAll('.testimonial-dots .dot');
+  const prevBtn = slider.querySelector('.testimonial-prev');
+  const nextBtn = slider.querySelector('.testimonial-next');
 
   if (slides.length === 0) return;
 
   let currentSlide = 0;
-  let autoPlayInterval;
+  let autoPlayInterval = null;
 
   function showSlide(index) {
-    // Handle wraparound
     if (index >= slides.length) index = 0;
     if (index < 0) index = slides.length - 1;
 
-    // Hide all slides
     slides.forEach(slide => slide.classList.remove('active'));
     dots.forEach(dot => dot.classList.remove('active'));
 
-    // Show current slide
     slides[index].classList.add('active');
     if (dots[index]) dots[index].classList.add('active');
 
     currentSlide = index;
   }
 
-  function nextSlide() {
-    showSlide(currentSlide + 1);
-  }
+  function nextSlide() { showSlide(currentSlide + 1); }
+  function prevSlide() { showSlide(currentSlide - 1); }
 
-  function prevSlide() {
-    showSlide(currentSlide - 1);
-  }
-
+  // Wix home testimonial slideshow auto-cycles every ~3s while in view
   function startAutoPlay() {
-    autoPlayInterval = setInterval(nextSlide, 5000);
+    stopAutoPlay();
+    autoPlayInterval = setInterval(nextSlide, 3000);
   }
 
   function stopAutoPlay() {
-    clearInterval(autoPlayInterval);
+    if (autoPlayInterval) { clearInterval(autoPlayInterval); autoPlayInterval = null; }
   }
 
-  // Event listeners
-  if (prevBtn) {
-    prevBtn.addEventListener('click', function() {
-      stopAutoPlay();
-      prevSlide();
-      startAutoPlay();
-    });
+  function manualNav(fn) {
+    stopAutoPlay();
+    fn();
+    startAutoPlay();
   }
 
-  if (nextBtn) {
-    nextBtn.addEventListener('click', function() {
-      stopAutoPlay();
-      nextSlide();
-      startAutoPlay();
-    });
-  }
+  if (prevBtn) prevBtn.addEventListener('click', () => manualNav(prevSlide));
+  if (nextBtn) nextBtn.addEventListener('click', () => manualNav(nextSlide));
 
   dots.forEach((dot, index) => {
-    dot.addEventListener('click', function() {
-      stopAutoPlay();
-      showSlide(index);
-      startAutoPlay();
-    });
+    dot.addEventListener('click', () => manualNav(() => showSlide(index)));
   });
 
   // Touch/swipe support
   let touchStartX = 0;
-  let touchEndX = 0;
-
-  slider.addEventListener('touchstart', function(e) {
-    touchStartX = e.changedTouches[0].screenX;
+  slider.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  slider.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 50) manualNav(diff > 0 ? nextSlide : prevSlide);
   }, { passive: true });
 
-  slider.addEventListener('touchend', function(e) {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  }, { passive: true });
-
-  function handleSwipe() {
-    const swipeThreshold = 50;
-    const diff = touchStartX - touchEndX;
-
-    if (Math.abs(diff) > swipeThreshold) {
-      stopAutoPlay();
-      if (diff > 0) {
-        nextSlide();
-      } else {
-        prevSlide();
-      }
-      startAutoPlay();
-    }
+  // Only auto-play while the slider is on screen (matches Wix behavior)
+  let inView = false;
+  function syncAutoPlay() {
+    if (inView && !document.hidden) startAutoPlay();
+    else stopAutoPlay();
   }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => {
+      inView = entries[0].isIntersecting;
+      syncAutoPlay();
+    }, { threshold: 0.2 }).observe(slider);
+  } else {
+    inView = true;
+  }
+  document.addEventListener('visibilitychange', syncAutoPlay);
 
-  // Initialize
   showSlide(0);
-  startAutoPlay();
-
-  // Pause on hover
-  slider.addEventListener('mouseenter', stopAutoPlay);
-  slider.addEventListener('mouseleave', startAutoPlay);
+  syncAutoPlay();
 }
 
 /* ===================================
