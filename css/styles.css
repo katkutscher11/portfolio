@@ -305,9 +305,9 @@ section {
 
 .bag-container {
   position: relative;
-  max-width: 700px;
+  max-width: 1000px;
   margin: 0 auto;
-  min-height: 500px;
+  min-height: 640px;
 }
 
 .bag-image {
@@ -315,7 +315,7 @@ section {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 280px;
+  width: 400px;
 }
 
 .portfolio-item {
@@ -329,10 +329,14 @@ section {
 }
 
 .portfolio-item img {
-  width: 80px;
+  width: 150px;
   height: auto;
   margin-bottom: 0.5rem;
 }
+.portfolio-item.modeling img { width: 195px; }
+.portfolio-item.content img { width: 175px; }
+.portfolio-item.branding img { width: 193px; }
+.portfolio-item.marketing img { width: 134px; }
 
 .portfolio-item h3 {
   font-size: 1rem;
@@ -341,23 +345,23 @@ section {
 }
 
 .portfolio-item.modeling {
-  top: 5%;
-  left: 30%;
+  top: 13%;
+  left: 24%;
 }
 
 .portfolio-item.content {
-  top: 20%;
-  right: 10%;
+  top: 15%;
+  right: 24%;
 }
 
 .portfolio-item.marketing {
-  bottom: 25%;
-  left: 5%;
+  bottom: 13%;
+  left: 14%;
 }
 
 .portfolio-item.branding {
-  bottom: 15%;
-  right: 5%;
+  bottom: 10%;
+  right: 19%;
 }
 
 /* ===================================
@@ -1270,53 +1274,75 @@ section {
 }
 
 /* ===================================
-   Portfolio Bag Spiral Animation
+   Portfolio bag "turn in" animation - matches live Wix behavior:
+   bag fades in + expands 0.8->1 + bounces once (1.5s/1.5s/2.2s),
+   then items fade (0.6s) and turn from -50deg to rest (1s ease),
+   staggered 0.2s counterclockwise from bottom-right (delays 1.7-2.3s).
    =================================== */
 .portfolio-item {
   opacity: 0;
-  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Starting positions - items clustered at center */
-.portfolio-item.modeling {
-  transform: translate(80px, 50px) rotate(-15deg) scale(0.5);
+.bag-image {
+  opacity: 0;
 }
 
-.portfolio-item.content {
-  transform: translate(-80px, 50px) rotate(15deg) scale(0.5);
+.bag-animated .bag-image {
+  animation: bag-fade-in 1.5s ease 0.001s both,
+             bag-expand-in 1.5s ease 0.001s both,
+             bag-bounce 2.2s linear 0.001s both;
 }
 
-.portfolio-item.marketing {
-  transform: translate(60px, -30px) rotate(-10deg) scale(0.5);
+@keyframes bag-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.portfolio-item.branding {
-  transform: translate(-60px, -30px) rotate(10deg) scale(0.5);
+@keyframes bag-expand-in {
+  from { scale: 0.8; }
+  to { scale: 1; }
 }
 
-/* Animated state - items spiral out to final positions */
-.portfolio-item.animate-in {
+@keyframes bag-bounce {
+  0% { translate: 0px 0px; animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
+  4.84% { translate: 0px -27.5px; animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
+  9.68% { translate: 0px -43.5px; animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
+  14.575% { translate: 0px -49px; animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
+  19.415% { translate: 0px -43.5px; animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
+  24.255% { translate: 0px -27.5px; animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
+  29.205% { translate: 0px 0px; animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
+  36.41% { translate: 0px -11.5px; animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
+  44.55% { translate: 0px 0px; animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
+  47.74% { translate: 0px -2.5px; animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
+  51.755% { translate: 0px 0px; animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
+  53.405% { translate: 0px -1px; animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1); }
+  55%, 100% { translate: 0px 0px; }
+}
+
+.bag-animated .portfolio-item {
+  animation: bag-fade-in 0.6s ease both, bag-turn-in 1s ease both;
+}
+.bag-animated .portfolio-item.branding { animation-delay: 1.7s, 1.7s; }
+.bag-animated .portfolio-item.content { animation-delay: 1.9s, 1.9s; }
+.bag-animated .portfolio-item.modeling { animation-delay: 2.1s, 2.1s; }
+.bag-animated .portfolio-item.marketing { animation-delay: 2.3s, 2.3s; }
+
+@keyframes bag-turn-in {
+  from { transform: rotate(-50deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* Resting tilts, matching Wix comp-rotate-z on each item image */
+.portfolio-item.modeling img { transform: rotate(19.5deg); }
+.portfolio-item.content img { transform: rotate(21.5deg); }
+.portfolio-item.branding img { transform: rotate(17.5deg); }
+
+/* After the entrance completes, restore normal flow so hover works */
+.bag-done .bag-image { opacity: 1; }
+.bag-done .portfolio-item {
+  animation: none;
   opacity: 1;
-}
-
-.portfolio-item.modeling.animate-in {
-  transform: translate(0, 0) rotate(0deg) scale(1);
-  transition-delay: 0.1s;
-}
-
-.portfolio-item.content.animate-in {
-  transform: translate(0, 0) rotate(0deg) scale(1);
-  transition-delay: 0.2s;
-}
-
-.portfolio-item.marketing.animate-in {
-  transform: translate(0, 0) rotate(0deg) scale(1);
-  transition-delay: 0.3s;
-}
-
-.portfolio-item.branding.animate-in {
-  transform: translate(0, 0) rotate(0deg) scale(1);
-  transition-delay: 0.4s;
+  transition: transform 0.35s ease;
 }
 
 /* General scroll animations */
@@ -1485,11 +1511,11 @@ section {
   .about .social-links { justify-content: center !important; }
 }
 
-/* Bag positions (Wix layout) */
-.portfolio-item.modeling { top: 12%; left: 12%; }
-.portfolio-item.content { top: 12%; right: 8%; }
-.portfolio-item.marketing { bottom: 18%; left: 8%; }
-.portfolio-item.branding { bottom: 12%; right: 5%; }
+/* Bag positions (Wix layout: items tucked against the bag, slight overlap) */
+.portfolio-item.modeling { top: 13%; left: 24%; }
+.portfolio-item.content { top: 15%; right: 24%; }
+.portfolio-item.marketing { bottom: 13%; left: 14%; }
+.portfolio-item.branding { bottom: 10%; right: 19%; }
 
 /* About page (Wix white card layout) */
 .about-page-grid {
@@ -1832,9 +1858,13 @@ section {
   .about-card-footer { flex-wrap: wrap; gap: 0.8rem; }
 
   /* bag portfolio: compose at full size instead of scaling down */
-  .bag-container { transform: none; max-width: 100%; min-height: 400px; }
+  .bag-container { transform: none; max-width: 100%; min-height: 420px; }
   .bag-image { width: 200px; }
   .portfolio-item img { width: 58px; }
+  .portfolio-item.modeling img { width: 76px; }
+  .portfolio-item.content img { width: 68px; }
+  .portfolio-item.branding img { width: 75px; }
+  .portfolio-item.marketing img { width: 52px; }
   .portfolio-item h3 { font-size: 0.8rem; }
 }
 

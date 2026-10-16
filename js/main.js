@@ -214,10 +214,7 @@ function initScrollEffects() {
     const bagObserver = new IntersectionObserver(function(entries) {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Animate each portfolio item with staggered delay
-          portfolioItems.forEach((item) => {
-            item.classList.add('animate-in');
-          });
+          bagContainer.classList.add('bag-animated');
           bagObserver.unobserve(entry.target);
         }
       });
@@ -227,6 +224,16 @@ function initScrollEffects() {
     });
 
     bagObserver.observe(bagContainer);
+
+    // When the last (latest-delayed) item finishes turning in, mark done so hover works
+    const lastItem = bagContainer.querySelector('.portfolio-item.marketing');
+    if (lastItem) {
+      lastItem.addEventListener('animationend', function(e) {
+        if (e.animationName === 'bag-turn-in') {
+          bagContainer.classList.add('bag-done');
+        }
+      });
+    }
   }
 
   // General scroll animations
