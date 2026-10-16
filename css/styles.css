@@ -1945,3 +1945,15 @@ section {
   .header .nav a::after { display: none; }
   .hero { padding-top: 96px; }
 }
+
+/* ===================================
+   Line-break typography
+   =================================== */
+h1, h2, h3, h4, h5, h6, .about-subtitle, .testimonial-text { text-wrap: balance; }
+p, li, figcaption { text-wrap: pretty; }
+.project-detail-item h4 { text-wrap: balance; }
+
+/* Forced breaks that match the desktop layout are dropped on mobile so text reflows naturally */
+@media (max-width: 768px) {
+  br.br-m { display: none; }
+}
