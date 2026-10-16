@@ -1787,3 +1787,4 @@ section {
 @media (max-width: 900px) {
   .project-details { grid-template-columns: repeat(2, 1fr); }
 }
+.project-details { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
