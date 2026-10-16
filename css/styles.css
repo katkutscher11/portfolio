@@ -1733,3 +1733,4 @@ section {
 }
 .section-pink .home-about-title { color: var(--color-dark-gray) !important; }
 .about-card-photo img { object-position: center 20%; }
+.about-card .social-links img { filter: invert(1); }
