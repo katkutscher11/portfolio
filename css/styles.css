@@ -1579,3 +1579,35 @@ section {
 }
 .project-details { text-align: center; }
 .project-detail-item p { font-size: 0.85rem; opacity: 0.9; }
+
+/* balanceUP + DJ Lóa */
+.balance-ig img { height: 520px; }
+.balance-goals {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.balance-goal-item { text-align: center; }
+.balance-goal-item p { font-size: 0.9rem; margin-top: 0.5rem; }
+.dj-task {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.dj-task-text { max-width: 420px; padding-top: 1rem; }
+.dj-testimonial {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 700px;
+}
+.dj-testimonial-photo {
+  width: 200px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 4px;
+}
