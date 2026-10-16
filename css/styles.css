@@ -1763,3 +1763,27 @@ section {
 }
 .btn-magenta:hover { background-color: #7a1456; color: #fff; }
 .btn-magenta.btn-arrow::after { content: " ⟶"; }
+
+/* Case study parity: 5-col details, card overlap, criteria bullets */
+.project-details {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.2rem;
+  text-align: center;
+}
+.case-intro-card {
+  margin-top: -7rem !important;
+  position: relative;
+  z-index: 5;
+}
+.case-criteria {
+  list-style: disc;
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: left;
+  color: #fff;
+}
+.case-criteria li { margin: 0.35rem 0; }
+@media (max-width: 900px) {
+  .project-details { grid-template-columns: repeat(2, 1fr); }
+}
