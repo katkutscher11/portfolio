@@ -1837,3 +1837,15 @@ section {
   .portfolio-item img { width: 58px; }
   .portfolio-item h3 { font-size: 0.8rem; }
 }
+
+@media (max-width: 768px) {
+  .header { padding: 0.7rem 0.9rem; align-items: flex-start; }
+  .logo { max-width: 135px; }
+  .logo-title { font-size: 0.72rem; }
+  .logo-subtitle { font-size: 0.53rem; line-height: 1.35; }
+  .header .nav { gap: 0.8rem; flex-shrink: 0; padding-top: 0.15rem; }
+  .nav a { font-size: 0.6rem; }
+  .hero-image { flex: 0 0 145px; width: 145px; }
+  .hero-text { flex: 1 1 auto; min-width: 0; }
+  .hero-text h1 { font-size: 19px; }
+}
