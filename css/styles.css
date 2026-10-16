@@ -1549,3 +1549,18 @@ section {
   .why-card { flex-direction: column; }
   .why-card-photo { width: 100%; height: auto; }
 }
+
+/* Modeling masonry gallery (Wix 4-col) */
+.masonry-gallery {
+  columns: 4;
+  column-gap: 10px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.masonry-gallery img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  display: block;
+}
+@media (max-width: 900px) { .masonry-gallery { columns: 2; } }
