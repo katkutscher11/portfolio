@@ -1611,3 +1611,33 @@ section {
   object-fit: cover;
   border-radius: 4px;
 }
+
+/* === Round 2 QA fixes: Wix hero font metrics + transparent header === */
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+:root {
+  --font-body: 'Jost', 'Futura', 'Trebuchet MS', sans-serif;
+}
+.header {
+  background-color: transparent;
+  padding: 2.2rem 11%;
+}
+.header .nav {
+  gap: 4.5rem;
+}
+.hero-text h1 {
+  font-size: 34px;
+  line-height: 1.4em;
+  font-weight: 900;
+  font-style: normal;
+  text-shadow: none;
+}
+.hero-image {
+  width: 260px;
+  margin-right: -70px;
+  position: relative;
+  z-index: 1;
+}
+.hero-text {
+  position: relative;
+  z-index: 2;
+}
