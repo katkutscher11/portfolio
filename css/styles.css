@@ -1337,3 +1337,126 @@ section {
 .scroll-animate[data-delay="3"] { transition-delay: 0.3s; }
 .scroll-animate[data-delay="4"] { transition-delay: 0.4s; }
 .scroll-animate[data-delay="5"] { transition-delay: 0.5s; }
+
+/* ===================================
+   Wix parity overrides
+   =================================== */
+.brands-logos img {
+  filter: none;
+  opacity: 1;
+  height: auto;
+  max-height: 90px;
+}
+
+.hero-text h1 {
+  font-style: normal;
+  text-shadow: none;
+}
+
+/* Wix-style filled white pill buttons */
+.btn, .btn-outline {
+  background-color: var(--color-white);
+  color: var(--color-dark-gray);
+  border: none;
+  border-radius: 30px;
+  padding: 0.6rem 1.8rem;
+  font-weight: 600;
+}
+.btn:hover, .btn-outline:hover {
+  background-color: #EFE3E3;
+  color: var(--color-dark-gray);
+  opacity: 1;
+}
+
+/* Case study hero + white intro card */
+.case-hero {
+  margin-top: 100px;
+}
+.case-hero img {
+  width: 100%;
+  height: 530px;
+  object-fit: cover;
+  display: block;
+}
+.case-intro-card {
+  background-color: var(--color-white);
+  color: var(--color-dark-gray);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 3rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.case-intro-card .case-logo {
+  flex: 0 0 320px;
+  text-align: center;
+}
+.case-intro-card .case-logo img {
+  max-width: 280px;
+  max-height: 140px;
+  margin: 0 auto 0.75rem;
+  object-fit: contain;
+}
+.case-intro-card .case-logo p {
+  color: var(--color-dark-gray);
+  font-size: 0.95rem;
+  margin: 0;
+}
+.case-intro-card .case-text p {
+  color: var(--color-dark-gray);
+  font-size: 0.95rem;
+}
+.case-intro-card .case-text .industry {
+  font-weight: 700;
+}
+
+/* White content card (Why work with me, DJ Lóa testimonial) */
+.white-card {
+  background-color: var(--color-white);
+  color: var(--color-dark-gray);
+  border-radius: 4px;
+  padding: 2.5rem 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.white-card h2, .white-card p {
+  color: var(--color-dark-gray);
+}
+
+/* Case study media rows */
+.case-media-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+.case-media-row img, .case-media-row video {
+  height: 290px;
+  width: auto;
+  border-radius: 0;
+  object-fit: cover;
+}
+
+/* Turn-in entrance animation (Wix motion-turnIn) */
+.anim-turn {
+  opacity: 0;
+  transform: perspective(600px) rotateY(-25deg) translateY(20px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.anim-turn.animate-in {
+  opacity: 1;
+  transform: perspective(600px) rotateY(0deg) translateY(0);
+}
+
+@media (max-width: 900px) {
+  .case-intro-card {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  .case-hero img {
+    height: 300px;
+  }
+}
