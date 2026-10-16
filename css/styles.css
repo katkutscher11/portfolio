@@ -1490,3 +1490,24 @@ section {
 .portfolio-item.content { top: 12%; right: 8%; }
 .portfolio-item.marketing { bottom: 18%; left: 8%; }
 .portfolio-item.branding { bottom: 12%; right: 5%; }
+
+/* About page (Wix white card layout) */
+.about-page-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: start;
+}
+.about-page-heading {
+  color: var(--color-dark-gray);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+}
+.about-page-text p {
+  color: var(--color-dark-gray);
+  font-size: 0.95rem;
+}
+@media (max-width: 768px) {
+  .about-page-grid { grid-template-columns: 1fr; }
+}
