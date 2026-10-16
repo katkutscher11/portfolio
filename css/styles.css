@@ -1641,3 +1641,6 @@ section {
   position: relative;
   z-index: 2;
 }
+.logo { max-width: 340px; }
+.header { padding: 2.2rem 17% 2.2rem 11%; }
+.hero-image { margin-right: -110px; }
