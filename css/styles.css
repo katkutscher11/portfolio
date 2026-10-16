@@ -1731,3 +1731,5 @@ section {
   margin: 0 5px;
   opacity: 0.9;
 }
+.section-pink .home-about-title { color: var(--color-dark-gray) !important; }
+.about-card-photo img { object-position: center 20%; }
