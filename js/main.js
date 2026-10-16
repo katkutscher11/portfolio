@@ -257,7 +257,7 @@ function initScrollEffects() {
   }
 
   // General scroll animations
-  const scrollAnimateElements = document.querySelectorAll('.scroll-animate');
+  const scrollAnimateElements = document.querySelectorAll('.scroll-animate, .anim-turn');
   const scrollObserver = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {

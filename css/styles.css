@@ -1460,3 +1460,33 @@ section {
     height: 300px;
   }
 }
+
+/* Home about grid */
+.about-grid {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+.about-text-col { max-width: 560px; }
+.about-portrait {
+  width: 300px;
+  height: 500px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 4px;
+}
+.about .social-links { margin-top: 1rem; }
+@media (max-width: 900px) {
+  .about-grid { flex-direction: column; align-items: center; text-align: center; }
+  .about .social-links { justify-content: center !important; }
+}
+
+/* Bag positions (Wix layout) */
+.portfolio-item.modeling { top: 12%; left: 12%; }
+.portfolio-item.content { top: 12%; right: 8%; }
+.portfolio-item.marketing { bottom: 18%; left: 8%; }
+.portfolio-item.branding { bottom: 12%; right: 5%; }
