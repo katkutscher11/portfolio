@@ -1734,3 +1734,16 @@ section {
 .section-pink .home-about-title { color: var(--color-dark-gray) !important; }
 .about-card-photo img { object-position: center 20%; }
 .about-card .social-links img { filter: invert(1); }
+
+/* About page: full-bleed white section like Wix */
+.section-white {
+  background-color: #fff;
+  color: #2b2b2b;
+}
+.about-page-heading {
+  color: #000;
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 1.15;
+}
+.about-page-text p { color: #2b2b2b; }
