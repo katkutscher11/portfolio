@@ -1788,3 +1788,18 @@ section {
   .project-details { grid-template-columns: repeat(2, 1fr); }
 }
 .project-details { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
+.btn-wm {
+  display: inline-block;
+  background-color: #fff;
+  color: #971a68;
+  border: none;
+  border-radius: 30px;
+  padding: 0.55rem 1.7rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: var(--transition-medium);
+}
+.btn-wm:hover { background-color: #f3d9e8; color: #971a68; }
+.btn-wm.btn-arrow::after { content: " ⟶"; }
+.case-criteria.numbered { list-style: decimal; }
