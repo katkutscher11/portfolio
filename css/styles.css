@@ -1531,3 +1531,21 @@ section {
 @media (max-width: 900px) {
   .marketing-grid { grid-template-columns: 1fr; }
 }
+
+/* CC why-work card */
+.why-card {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.why-card-text { flex: 1; }
+.why-card-photo {
+  width: 340px;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+@media (max-width: 900px) {
+  .why-card { flex-direction: column; }
+  .why-card-photo { width: 100%; height: auto; }
+}
