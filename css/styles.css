@@ -1803,3 +1803,37 @@ section {
 .btn-wm:hover { background-color: #f3d9e8; color: #971a68; }
 .btn-wm.btn-arrow::after { content: " ⟶"; }
 .case-criteria.numbered { list-style: decimal; }
+
+/* Wix mobile parity (measured against live site at 390px) */
+@media (max-width: 768px) {
+  /* inline nav like Wix, no hamburger */
+  .menu-toggle { display: none !important; }
+  .nav {
+    position: static;
+    right: auto;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    flex-direction: row;
+    gap: 1.1rem;
+  }
+  .nav a { font-size: 0.72rem; padding: 0; }
+
+  /* hero stays side-by-side like Wix mobile */
+  .hero { min-height: auto; padding: 110px 0 50px; }
+  .hero-content { flex-direction: row !important; flex-wrap: nowrap; gap: 1rem; }
+  .hero-image { width: 145px; margin-right: 0; }
+  .hero h1 { font-size: 19px; line-height: 1.35; }
+
+  /* About card: Wix mobile shows the text card without the photo */
+  .about-card .about-card-photo { display: none; }
+  .about-card { flex-direction: column; }
+  .about-card-text { padding: 1.6rem; }
+  .about-card-footer { flex-wrap: wrap; gap: 0.8rem; }
+
+  /* bag portfolio: compose at full size instead of scaling down */
+  .bag-container { transform: none; max-width: 100%; min-height: 400px; }
+  .bag-image { width: 200px; }
+  .portfolio-item img { width: 58px; }
+  .portfolio-item h3 { font-size: 0.8rem; }
+}
