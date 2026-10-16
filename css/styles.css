@@ -1858,14 +1858,18 @@ section {
   .about-card-footer { flex-wrap: wrap; gap: 0.8rem; }
 
   /* bag portfolio: compose at full size instead of scaling down */
-  .bag-container { transform: none; max-width: 100%; min-height: 420px; }
-  .bag-image { width: 200px; }
-  .portfolio-item img { width: 58px; }
-  .portfolio-item.modeling img { width: 76px; }
-  .portfolio-item.content img { width: 68px; }
-  .portfolio-item.branding img { width: 75px; }
-  .portfolio-item.marketing img { width: 52px; }
-  .portfolio-item h3 { font-size: 0.8rem; }
+  .bag-container { transform: none; max-width: 100%; min-height: 400px; }
+  .bag-image { width: 250px; top: 50%; }
+  .portfolio-item img { width: 70px; margin: 0 auto 0.3rem; }
+  .portfolio-item.modeling img { width: 92px; }
+  .portfolio-item.content img { width: 84px; }
+  .portfolio-item.branding img { width: 90px; }
+  .portfolio-item.marketing img { width: 66px; }
+  .portfolio-item h3 { font-size: 0.85rem; line-height: 1.2; }
+  .portfolio-item.modeling { top: 12%; left: 8%; bottom: auto; right: auto; }
+  .portfolio-item.content { top: 12%; right: 10%; bottom: auto; left: auto; }
+  .portfolio-item.marketing { bottom: 8%; left: 8%; top: auto; right: auto; }
+  .portfolio-item.branding { bottom: 6%; right: 6%; top: auto; left: auto; max-width: 130px; }
 }
 
 @media (max-width: 768px) {
@@ -1878,4 +1882,12 @@ section {
   .hero-image { flex: 0 0 145px; width: 145px; }
   .hero-text { flex: 1 1 auto; min-width: 0; }
   .hero-text h1 { font-size: 19px; }
+}
+
+/* === Mobile pass: legibility, tap targets, DJ Lóa testimonial === */
+@media (max-width: 768px) {
+  .nav a { padding: 0.55rem 0; margin: -0.55rem 0; }
+  .dj-testimonial { flex-direction: column; text-align: center; gap: 1rem; padding: 1.5rem; }
+  .dj-testimonial-photo { width: 100%; max-width: 260px; height: auto; aspect-ratio: 5 / 7; }
+  video, iframe { max-width: 100%; }
 }
